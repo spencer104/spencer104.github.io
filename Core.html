@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden; 
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+}
+
+#navbar {
+  overflow: hidden;
+  background-color: #333;
+  z-index: 9;
+}
+
+#navbar a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+#navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
+
+/* Right-aligned link */
+#navbar a.right {
+  float: right;
+}
+
+
+
+.content2 {
+  padding: 16px;
+  position: absolute;
+  left: 110px;
+  top: 100px; 
+}
+
+
+
+.content3 {
+  padding: 16px;
+  position: absolute;
+  left: 110px;
+  top: 220px; 
+}
+
+.content4 {
+  padding: 16px;
+  position: absolute;
+  left: 570px;
+  top: 220px; 
+}
+
+.content5 {
+  padding: 16px;
+  position: absolute;
+  left: 570px;
+  top: 900px; 
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+
+
+
+</style> <!-- our general class -->
+</head>
+<body>
+
+<div class="header">
+</div>
+
+<div id="navbar">
+  <a href="Website.html">Home</a>
+</div>
+
+<div class="content2" >    
+    <h2> Impact+ Business Plan </h2>
+</div>
+
+<div class="content3" >
+        <img src="E:\Code Project\HTML\COre project photo.jpg" 
+        alt="Handsome Picture of Spencer" width="400" height="500" style= "border:5px solid #000000">
+      
+    
+</div>
+  
+<div class = "content4"  >
+    <h2 style = "left: 800 px"> Hello! </h2>
+    <pre style ="font-family:Arial ; font-size:1.15em  " 
+    >               For my Fall 2021 semester, I was part of a 10-person team that developed
+    a business plan to bring a product to market. The plan focused on four key
+    topics for a business: marketing, operations, risk, and finances. My role on the 
+    team was to lead the finance and operations teams by creating and allocating 
+    tasks, as well as compiling everyone's work. My favorite part of this project was 
+    being able to utilize and learn new skills not directly related to the project.
+    I had fun designing the product, learning how to use Photoshop, and reaching out 
+    to friends to turn the 3D print model into a laser-cut acrylic model. Overall, 
+    I enjoyed this project because it forced me to think and act dynamically 
+    by integrating multiple disciplines into one singular project.
+
+    </pre>
+</div>
+
+<div class = "content5">
+    <object data="E:\Code Project\HTML\Business Plan.pdf" type="application/pdf" width = 800 height = 840 >
+    </object>
+</div>
+
+
+
+
+<!-- Runs the scrolling bar-->
+<script>
+window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("navbar");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
+</script>
+
+</body>
+</html>
+ <div style = "padding-bottom: 1500px;"> </div>  
+
