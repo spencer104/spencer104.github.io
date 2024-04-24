@@ -2,8 +2,8 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <style>
+
 html {
   scroll-behavior: smooth;
 }
@@ -16,26 +16,40 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 .header {
   background-color: #f1f1f1;
   padding: 30px;
   text-align: center;
 }
 
+.header, #navbar {
+  width: 100%;
+}
+
 #navbar {
-  overflow: hidden;
+  display: flex;
+  justify-content: flex-start;
   background-color: #333;
-  z-index: 9;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  overflow: hidden;
 }
 
 #navbar a {
-  float: left;
-  display: block;
   color: #f2f2f2;
-  text-align: center;
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  text-align: center;
 }
 
 #navbar a:hover {
@@ -48,66 +62,65 @@ body {
   color: white;
 }
 
-/* Right-aligned link */
 #navbar a.right {
-  float: right;
+  margin-left: auto;
 }
 
-.content {
-  padding: 16px;
-  position: absolute;
-  left: 110px;
-  top: 600px;
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 50px;
 }
 
+.side-by-side-container {
+  display: flex;
+  justify-content: center; /* Adjusts children horizontally */
+  align-items: center; /* Aligns children vertically in the middle */
+  width: 100%; /* Ensures container takes full width */
+}
 
 .content2 {
-  padding: 16px;
-  position: absolute;
-  left: 700px;
-  top: 400px; 
+  flex: 1; /* Takes up 1 part of the available space */
+  min-width: 200px; /* Minimum width to ensure content is readable */
+  padding-bottom: 350px;
 }
 
 .content3 {
-  padding: 16px;
-  position: absolute;
-  left: 570px;
-  top: 620px; 
+  flex: 3; /* Takes up 2 parts of the available space */
+  min-width: 200px; /* Minimum width to ensure content is readable */
+  padding-bottom: 350px;
+}
+
+.side-by-side-container2 {
+  display: flex;
+  justify-content: center; /* Adjusts children horizontally */
+  align-items: center; /* Aligns children vertically in the middle */
+  width: 100%; /* Ensures container takes full width */
 }
 
 .content4 {
-  padding: 16px;
-  position: absolute;
-  left: 117px;
-  top: 1000px; 
+  flex: 1; /* Takes up 1 part of the available space */
+  min-width: 200px; /* Minimum width to ensure content is readable */
+  padding-bottom: 350px;
 }
 
 .content5 {
-  padding: 16px;
-  position: absolute;
-  left: -200px;
-  top: 1100px; 
+  flex: 3; /* Takes up 2 parts of the available space */
+  min-width: 200px; /* Minimum width to ensure content is readable */
+  padding-bottom: 350px;
 }
 
-.content6 {
-  padding: 16px;
-  position: absolute;
-  left: 127px;
-  top: 2700px; 
+.header, .content, .contentA {
+  width: 100%; /* Ensures full width for header and content */
+  text-align: center; /* Centers text within these elements */
+  scroll-margin-top: 70px; /* Height of the navbar */
 }
 
-.content7 {
-  padding: 16px;
-  position: absolute;
-  left: -380px;
-  top: 3200px; 
-}
-
-.content8 {
-  padding: 16px;
-  position: absolute;
-  left: 40px;
-  top: 4000px; 
+.content{
+  padding-bottom: 350px;
 }
 
 .sticky {
@@ -116,138 +129,120 @@ body {
   width: 100%;
 }
 
-.sticky + .content {
-  padding-top: 60px;
-}
+#Project .project-container {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        flex-wrap: wrap;
+    }
 
-.btn {
-  
-  border: 3px solid black;
-  background-color: white;
-  color: black;
-  padding: 35px 120px;
-  font-size: 16px;
-  cursor: pointer;
-}
+    .project-item {
+        flex: 1;
+        min-width: 300px;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
 
-.default {
-  border-color: black;
-  color: black;
-  width : 500px ;
-  height: 100px 
-}
+    .project-item img {
+        width: 491px;
+        height: 300px;
+        border: 3px solid #000000;
+        margin-bottom: 40px; /* Space between image and button */
+    }
 
-.default:hover {
-  background: #e7e7e7;
-}
-
-
+    .project-item button {
+        width: 495px;
+        height: 100px;
+        border: 3px solid black;
+        background-color: white;
+        color: black;
+        font-size: 16px;
+        cursor: pointer;
+    }
 
 </style>
 </head>
 <body>
 
-<div class="header">
-  <h2>Spencer Yeh CV</h2>
-</div>
-
-<!-- Navagation bar along with ID's-->
-<div id="navbar">
-  <a href="#About_Me">About</a>
-  <a href="#Resume">Resume</a>
-  <a href="#Project">Projects</a>
-
-  <a href="https://www.linkedin.com/in/spenceryeh/" class="right">LinkedIn</a>
-</div>
-
-
-<!--About Page -->
- 
-<div class = "content2",  id = "About_Me">
-<h2> About</h2>
-</div>
-
-<div class="content" >
-  <img src="./Headshot Spencer BU edited.jpg" 
-  alt="Handsome Picture of Spencer" width="300" height="300" style= "border:8px solid #000000">
- </div>
-
-
-
- <div class = "content3"  >
-  <h2 style = "left: 500 px"> Hello! </h2>
-  <pre style ="font-family:Arial ; font-size:1.15em  " 
-  >My name is Spencer Yeh and this is my personal website that I created 
-using HTML and CSS. I recently graduated from Boston University with a 
-B.A. in Math/Computer Science and a B.S. in Business Administration. 
-This website serves to share my projects and experiences.
-Feel free to explore below!  
-         </pre>
-         
-
-<!-- Resume Page -->
-  
-<div class = "content4", id = "Resume">   
-  <h2>Resume</h2>
-</div>
-
-<div class = "content5">
-  <object data="./Resume Spencer Yeh.pdf" type="application/pdf" width = 800 height = 1075 >
-  </object>
-</div>
-
-
-
-
-<!--Projects page -->
-
-<div class = 'content6', id = "Project">
-  <h2>Projects</h2>
-</div>
-
-<div class = 'content7', id = "Project">
-  
-  <!-- how to impliment button -->
-  <form action="https://github.com/spencer104/Excel-to-PowerPoint-">
-    <!-- Button class -->
-    <button class="btn default"> Excel Sheets To PowerPoint Report</button>  
-  </form> 
-
-  <!-- Photo -->
-  <div style =  "position:absolute;  top: -360px">
-    <img src="./photo powerpoint to excel.png" 
-    alt="excel -> pptx " width="491" height="300" style= "border:3px solid #000000">
-    </div>
-
-    
-    <!--  Core Project -->
-  
-  <div style =  "position:relative; left:680px; top: -100px">
-    <form action="Core.html">
-  <button class="btn default" > Impact+ Business Plan </button>
-    </form>
-
+  <div class="header">
+    <h2>Spencer Yeh CV</h2>
   </div>
 
-  <div style =  "position:absolute;  top: -360px ; left: 700px ">
+  <div id="navbar">
+    <a href="#About_Me">About</a>
+    <a href="#Resume">Resume</a>
+    <a href="#Project">Projects</a>
+    <a href="https://www.linkedin.com/in/spenceryeh/" class="right">LinkedIn</a>
+  </div>
 
-    <img src="Core photo1.jpg" 
-    alt="Core Project" width="491" height="300" style= "border:3px solid #000000">
+
+<div class="main-container">
+
+  <div class = "contentA",  id = "About_Me">
+    <h2> About</h2>
     </div>
+
+    <div class="side-by-side-container">
+      <div class="content2">
+        <img src="./Headshot Spencer BU edited.jpg" 
+        alt="Handsome Picture of Spencer" width="300" height="300" style="border:8px solid #000000">
+      </div>
     
+      <div class="content3">
 
+        <pre style="font-family:Arial; font-size:1.15em">
+          Hello! My name is Spencer Yeh and this is my personal website 
+          that I created using HTML and CSS. I recently graduated 
+          from Boston University with a B.A. in Math/Computer Science 
+          and a B.S. in Business Administration. This website serves 
+          to share my projects and experiences. 
+          Feel free to explore below!  
+        </pre>
+      </div>
+    </div>
+  
+  <div class="content" id="Resume">
+    <h2>Resume</h2>
+    <object data="./Resume Spencer Yeh.pdf" type="application/pdf" width="800" height="1075"></object>
+  </div>
+ 
 
- </div>
+  <div class="content" id="Project">
+    <h2>Projects</h2>
+    <div class="project-container">
+      <div class="project-item">
+        
+        <img src="./photo powerpoint to excel.png" alt="excel -> pptx" width="491" height="300" style="border:3px solid #000000">
 
+          <!-- how to impliment button -->
+        <form action="https://github.com/spencer104/Excel-to-PowerPoint-">
+          <!-- Button class -->
+        <button class="btn default"> Excel Sheets To PowerPoint Report</button>  
+  
+  </form> 
+      </div>
+      <div class="project-item">
+        <img src="Core photo1.jpg"  alt="Core Project" width="491" height="300" style="border:3px solid #000000">
+       
 
+          <form action="Core.html">
+        <button class="btn default" > Impact+ Business Plan </button>
+          </form>
+      
+      </div>
+    </div>
+  </div>
+  
 
-<!-- Runs the scrolling bar-->
+</div>
+
 <script>
 window.onscroll = function() {myFunction()};
-
 var navbar = document.getElementById("navbar");
 var sticky = navbar.offsetTop;
-
 function myFunction() {
   if (window.pageYOffset >= sticky) {
     navbar.classList.add("sticky")
@@ -258,6 +253,3 @@ function myFunction() {
 </script>
 
 </body>
-</html>
- <div style = "padding-bottom: 1500px;"> </div>  
-
