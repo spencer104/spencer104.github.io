@@ -23,24 +23,39 @@
         }
 
         .header, #navbar {
-            width: 100%; /* Full width */
+          width: 100%;
         }
 
         #navbar {
-            background-color: #333;
-            z-index: 9;
+          display: flex;
+          justify-content: flex-start;
+          background-color: #333;
+          position: sticky;
+          top: 0;
+          z-index: 10;
+          overflow: hidden;
         }
 
         #navbar a {
-            color: #f2f2f2;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
+          color: #f2f2f2;
+          padding: 14px 16px;
+          text-decoration: none;
+          font-size: 17px;
+          text-align: center;
         }
 
-        #navbar a:hover, #navbar a.active {
-            background-color: #ddd;
-            color: black;
+        #navbar a:hover {
+          background-color: #ddd;
+          color: black;
+        }
+
+        #navbar a.active {
+          background-color: #04AA6D;
+          color: white;
+        }
+
+        #navbar a.right {
+          margin-left: auto;
         }
 
         .content-container, .horizontal-container {
@@ -75,12 +90,12 @@
         .content3 {
             width: 25%; /* Smaller width for image */
             padding-right: 500; /* Push everything else to the right */
-            padding-bottom: 350px;
+            padding-bottom: 25px;
         }
 
         .content4 {
             width: 75%; /* Larger width for text content */
-            padding-bottom: 350px;
+            padding-bottom: 25px;
             
 
         }
@@ -96,7 +111,7 @@
 <div class="header"></div>
 
 <div id="navbar">
-    <a href="Website.html">Home</a>
+    <a href="/.">Home</a>
 </div>
 
 <div class="content2">    
