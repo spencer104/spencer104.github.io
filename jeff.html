@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spencer's Portfolio</title>
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            font-size: 28px;
+            font-family: Arial, Helvetica, sans-serif;
+            display: flex; /* Flex display */
+            flex-direction: column; /* Stack children vertically */
+            align-items: center; /* Center-align children horizontally */
+            justify-content: center; /* Center-align children vertically */
+            min-height: 100vh; /* Full viewport height */
+        }
+
+        .header, #navbar {
+            width: 100%; /* Full width */
+        }
+
+        #navbar {
+            background-color: #333;
+            z-index: 9;
+        }
+
+        #navbar a {
+            color: #f2f2f2;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+        #navbar a:hover, #navbar a.active {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .content-container, .horizontal-container {
+            display: flex; /* Use flexbox to layout children */
+            width: 100%; /* Full container width */
+            max-width: 1200px; /* Maximum width of the container */
+            justify-content: center; /* Center the flex items */
+            align-items: center; /* Center-align children horizontally */
+         
+        }
+
+        .content-container {
+            flex-direction: column; /* Stack children vertically */
+        }
+
+        .horizontal-container {
+            flex-direction: row; /* Arrange side by side */
+            justify-content: flex-start; /* Align children to the start of the container */
+        }
+
+        .content2, .content3, .content4, .content5 {
+            width: 90%; /* Set width to prevent overflow */
+            max-width: 960px; /* Maximum width */
+            box-sizing: border-box; /* Include padding and borders in width calculation */
+            text-align: center; /* Center text inside the content blocks */
+        }
+        .content2 {
+            padding-bottom: 75px;
+        }
+
+
+        .content3 {
+            width: 25%; /* Smaller width for image */
+            padding-right: 500; /* Push everything else to the right */
+            padding-bottom: 350px;
+        }
+
+        .content4 {
+            width: 75%; /* Larger width for text content */
+            padding-bottom: 350px;
+            
+
+        }
+
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+<div class="header"></div>
+
+<div id="navbar">
+    <a href="Website.html">Home</a>
+</div>
+
+<div class="content2">    
+    <h2>Impact+ Business Plan</h2>
+</div>
+
+<div class="content-container">
+    <div class="horizontal-container">
+      <div class="content3" >
+        <img src="./COre project photo.jpg" 
+        alt="Handsome Picture of Spencer" width="400" height="500" style= "border:5px solid #000000">
+        </div>
+       
+        <div class="content4">
+            <pre style="font-family:Arial; font-size:1.15em">
+                For my Fall 2021 semester, I was part of a 10-person team 
+                that developed a business plan to bring a product to market. 
+                The plan focused on four key topics for a business: marketing,
+                operations, risk, and finances. My role on the team was to lead 
+                the finance and operations teams by creating and allocating 
+                tasks, as well as compiling everyone's work. My favorite 
+                part of the project was being able to utilize and learn new 
+                skills not directly related to the project. I had fun designing 
+                the product, learning how to use Photoshop, and reaching out 
+                to friends to help create an acrylic model. Overall, I enjoyed 
+                this project because it forced me to think and act dynamically 
+                by integrating multiple disciplines into one singular project.</pre>
+        </div>
+    </div>
+    <div class="content5">
+        <object data="./Business Plan.pdf" type="application/pdf" width="800" height="840"></object>
+    </div>
+</div>
+
+<!-- Runs the scrolling bar-->
+<script>
+  window.onscroll = function() {myFunction()};
+  
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+  
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
+  }
+  </script>
+  
+  </body>
+  </html>
+   <div style = "padding-bottom: 1500px;"> </div>  
+  
+  
