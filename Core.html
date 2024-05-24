@@ -26,7 +26,7 @@
             display: flex;
             justify-content: flex-start;
             background-color: #333;
-            position: sticky;
+          
             top: 0;
             z-index: 10;
             overflow: hidden;
@@ -54,6 +54,13 @@
             margin-left: auto;
         }
 
+        
+        .sticky {
+            position: fixed;
+            top: 0;
+            width: 100%;
+        }
+
         .main-container {
             display: flex;
             flex-direction: column;
@@ -66,6 +73,8 @@
             width: 100%; /* Ensures full width for header and content */
             text-align: center; /* Centers text within these elements */
             scroll-margin-top: 70px; /* Height of the navbar */
+            margin-top: 10vh ;
+            
         }
 
         .side-by-side-container {
@@ -96,11 +105,6 @@
             text-align: center; /* Center text inside the content blocks */
         }
 
-        .sticky {
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
 
         @media (max-width: 1024px) {
             .content3 {
