@@ -1,181 +1,253 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Spencer's Portfolio</title>
-    <style>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
 
+/* Removed the border styling used for debugging */
+/*
+* {
+  border: 2px solid #04AA6D  ;
+}
+*/
 
-        html, body {
-        scroll-behavior: smooth;
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        overflow-x: hidden; 
-        font-size: 28px;
-        font-family: Arial, Helvetica, sans-serif;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        }
+html, body {
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; 
+  font-size: 28px;
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-        .header, #navbar {
-          width: 100%;
-        }
+.header {
+  background-color: #f1f1f1;
+  padding: 30px;
+  text-align: center;
+  width: 100%; /* Ensures the header takes full width */
+}
 
-        #navbar {
-          display: flex;
-          justify-content: flex-start;
-          background-color: #333;
-          position: sticky;
-          top: 0;
-          z-index: 10;
-          overflow: hidden;
-        }
+#navbar {
+  display: flex;
+  justify-content: flex-start;
+  background-color: #333;
+  top: 0;
+  z-index: 1000; /* Ensures the navbar stays on top */
+  width: 100%; /* Ensures the navbar takes full width */
+}
 
-        #navbar a {
-          color: #f2f2f2;
-          padding: 14px 16px;
-          text-decoration: none;
-          font-size: 17px;
-          text-align: center;
-        }
+#navbar a {
+  color: #f2f2f2;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+  text-align: center;
+}
 
-        #navbar a:hover {
-          background-color: #ddd;
-          color: black;
-        }
+#navbar a:hover {
+  background-color: #ddd;
+  color: black;
+}
 
-        #navbar a.active {
-          background-color: #04AA6D;
-          color: white;
-        }
+#navbar a.active {
+  background-color: #04AA6D;
+  color: white;
+}
 
-        #navbar a.right {
-          margin-left: auto;
-        }
+#navbar a.right {
+  margin-left: auto;
+}
 
-        .main-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 90%;
-        max-width: 1200px;
-       
-        }
-        
-        .content1 { 
-            width: 100%; /* Ensures full width for header and content */
-            text-align: center; /* Centers text within these elements */
-            scroll-margin-top: 70px; /* Height of the navbar */
-        }
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.sticky + .content {
+  padding-top: 60px;
+}
 
-        .side-by-side-container {
-        display: flex;
-        justify-content: center; /* Adjusts children horizontally */
-        align-items: center; /* Aligns children vertically in the middle */
-        width: 100%; /* Ensures container takes full width */
-        margin-bottom: 20vh;
-        }
+.main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 90%;
+  max-width: 1200px;
+  margin-top: 50px;
+}
 
-        .content2 {
-        display: flex;
-        width: 20%;
-        flex: 1; /* Takes up 1 part of the available space */
-        min-width: 200px; /* Minimum width to ensure content is readable */
-        justify-content: center;
-        }
+.side-by-side-container {
+  display: flex;
+  justify-content: center; /* Adjusts children horizontally */
+  align-items: center; /* Aligns children vertically in the middle */
+  width: 100%; /* Ensures container takes full width */
+  margin-top: 20vh;
+  margin-bottom: 20vh;
+}
 
-        .content3 {
-        padding-left: 10%;
-        width: 70%;
-        }
+.content2 {
+  display: flex;
+  width: 20%;
+  flex: 1; /* Takes up 1 part of the available space */
+  min-width: 200px; /* Minimum width to ensure content is readable */
+  justify-content: center;
+}
 
-        
-        .content5 {
-            width: 90%; /* Set width to prevent overflow */
-            max-width: 960px; /* Maximum width */
-            box-sizing: border-box; /* Include padding and borders in width calculation */
-            text-align: center; /* Center text inside the content blocks */
-        }
+.content3 {
+  padding-left: 10%;
+  width: 70%;
+}
 
+.side-by-side-container2 {
+  display: flex;
+  justify-content: center; /* Adjusts children horizontally */
+  align-items: center; /* Aligns children vertically in the middle */
+  width: 100%; /* Ensures container takes full width */
+}
 
+.content4 {
+  flex: 1; /* Takes up 1 part of the available space */
+  min-width: 200px; /* Minimum width to ensure content is readable */
+  padding-bottom: 350px;
+}
 
-        .sticky {
-            position: fixed;
-            top: 0;
-            width: 100%;
-        }
+.content5 {
+  flex: 3; /* Takes up 2 parts of the available space */
+  min-width: 200px; /* Minimum width to ensure content is readable */
+  padding-bottom: 350px;
+}
 
+.header, .content, .contentA, .content_resume {
+  width: 100%; /* Ensures full width for header and content */
+  text-align: center; /* Centers text within these elements */
+  scroll-margin-top: 70px; /* Height of the navbar */
+}
 
-        @media (max-width: 1024px) {
-        .content3 {
-            width: 100%; /* Ensures content3 takes full width on smaller screens */
-            padding-left: 0;
-        }
+.content, .content_resume {
+  padding-bottom: 350px;
+}
 
-        .content2 {
-            width: 100%; /* Ensures content2 takes full width on smaller screens */
-        }
+.content_resume {
+  width: 100%; /* Ensures the resume section takes full width on smaller screens */
+  text-align: center; /* Center-align the resume image */
+}
 
-        .side-by-side-container {
-            display: block; /* Stacks the content vertically on smaller screens */
-        }
+.resume-image {
+  width: 90%; /* Adjust as needed to ensure the image fits well */
+  max-width: 800px; /* Optional: limit the maximum width */
+  height: auto; /* Maintain aspect ratio */
+}
 
-        }
+#Project .project-container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
 
+.project-item {
+  flex: 1;
+  min-width: 40vh;  /* Change the length of the boxes */
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
+.project-item img {
+  object-fit: cover;
+  border: 3px solid #000000;
+  margin-bottom: 40px; /* Space between image and button */
+}
 
-    </style>
+.project-item button {
+  width: 375px;
+  height: 100px;
+  border: 3px solid black;
+  background-color: white;
+  color: black;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* Responsive styling for smaller screens */
+@media (max-width: 1024px) {
+  .content3 {
+    width: 100%; /* Ensures content3 takes full width on smaller screens */
+    padding-left: 0;
+  }
+
+  .content2 {
+    width: 100%; /* Ensures content2 takes full width on smaller screens */
+  }
+
+  .side-by-side-container {
+    display: block; /* Stacks the content vertically on smaller screens */
+  }
+}
+
+</style>
 </head>
 <body>
-<div class="header"></div>
 
-<div id="navbar">
-    <a href="/.">Home</a>
+<div class="header">
+  <h2>Spencer Yeh CV</h2>
 </div>
 
+<div id="navbar">
+  <a href="#About_Me">About</a>
+  <a href="#Resume">Resume</a>
+  <a href="#Project">Projects</a>
+  <a href="https://www.linkedin.com/in/spenceryeh/" class="right">LinkedIn</a>
+</div>
 
 <div class="main-container">
 
+  <div class="contentA" id="About_Me">
+    <h2>About</h2>
+  </div>
 
-    <div class="content1">    
-    <h2>Impact+ Business Plan</h2>
-</div>
-
-
-<div class="side-by-side-container">
+  <div class="side-by-side-container">
     <div class="content2">
-      <img src="./COre project photo.jpg" alt="Handsome Picture of Spencer" width="400" height="500" style="border:8px solid #000000">
+      <img src="./Headshot Spencer BU edited.jpg" alt="Handsome Picture of Spencer" width="300" height="300" style="border:8px solid #000000">
     </div>
     
     <div class="content3">
       <p style="font-family:Arial; font-size:1.15em">
-        For my Fall 2021 semester, I was part of a 10-person team 
-                that developed a business plan to bring a product to market. 
-                The plan focused on four key topics for a business: marketing,
-                operations, risk, and finances. My role on the team was to lead 
-                the finance and operations teams by creating and allocating 
-                tasks, as well as compiling everyone's work. My favorite 
-                part of the project was being able to utilize and learn new 
-                skills not directly related to the project. I had fun designing 
-                the product, learning how to use Photoshop, and reaching out 
-                to friends to help create an acrylic model. Overall, I enjoyed 
-                this project because it forced me to think and act dynamically 
-                by integrating multiple disciplines into one singular project.
+        Hello! My name is Spencer Yeh and this is my personal website that I created using HTML and CSS. I recently graduated from Boston University with a B.A. in Math/Computer Science and a B.S. in Business Administration. This website serves to share my projects and experiences. Feel free to explore below!
       </p>
     </div>
   </div>
 
+  <div class="content_resume" id="Resume">
+    <h2>Resume</h2>
+    <img src="./Resume Spencer Yeh.jpg" alt="Resume of Spencer Yeh" class="resume-image" style="border:3px solid #000000">
+  </div>
+
+  <div class="content" id="Project">
+    <h2>Projects</h2>
+    <div class="project-container">
+      <div class="project-item">
+        <img src="./photo powerpoint to excel.png" alt="excel -> pptx" width="372" height="300" style="border:3px solid #000000">
+        <form action="https://github.com/spencer104/Excel-to-PowerPoint-">
+          <button class="btn default">Excel Sheets To PowerPoint Report</button>
+        </form>
+      </div>
+      <div class="project-item">
+        <img src="Core photo1.jpg" alt="Core Project" width="372" height="300" style="border:3px solid #000000">
+        <form action="Core.html">
+          <button class="btn default">Impact+ Business Plan</button>
+        </form>
+      </div>
+    </div>
+  </div>
+
 </div>
-
-
-<div class="content5">
-    <iframe src="./Business Plan.pdf" width="800" height="840"></iframe>
-</div>
-
-<!-- Runs the scrolling bar-->
 <script>
   window.onscroll = function() {myFunction()};
   
@@ -190,9 +262,5 @@
     }
   }
   </script>
-  
-  </body>
-  </html>
-   <div style = "padding-bottom: 1500px;"> </div>  
-  
-  
+</body>
+</html>

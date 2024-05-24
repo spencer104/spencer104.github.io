@@ -35,9 +35,8 @@ html, body {
   display: flex;
   justify-content: flex-start;
   background-color: #333;
-  position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 1000; /* Ensures the navbar stays on top */
   width: 100%; /* Ensures the navbar takes full width */
 }
 
@@ -61,6 +60,15 @@ html, body {
 
 #navbar a.right {
   margin-left: auto;
+}
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+.sticky + .content {
+  padding-top: 60px;
 }
 
 .main-container {
@@ -134,12 +142,6 @@ html, body {
   height: auto; /* Maintain aspect ratio */
 }
 
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-}
-
 #Project .project-container {
   display: flex;
   justify-content: space-around;
@@ -187,7 +189,6 @@ html, body {
   .side-by-side-container {
     display: block; /* Stacks the content vertically on smaller screens */
   }
-
 }
 
 </style>
@@ -247,19 +248,19 @@ html, body {
   </div>
 
 </div>
-
 <script>
-window.onscroll = function() {myFunction()};
-var navbar = document.getElementById("navbar");
-var sticky = navbar.offsetTop;
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky");
-  } else {
-    navbar.classList.remove("sticky");
+  window.onscroll = function() {myFunction()};
+  
+  var navbar = document.getElementById("navbar");
+  var sticky = navbar.offsetTop;
+  
+  function myFunction() {
+    if (window.pageYOffset >= sticky) {
+      navbar.classList.add("sticky")
+    } else {
+      navbar.classList.remove("sticky");
+    }
   }
-}
-</script>
-
+  </script>
 </body>
 </html>
