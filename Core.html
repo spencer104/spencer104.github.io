@@ -123,6 +123,13 @@
             display: block; /* Stacks the content vertically on smaller screens */
         }
 
+        iframe {
+        width: 100%;
+        /* Calculate the height based on the aspect ratio of the PDF */
+        height: calc(100vw * 1.05); /* Assuming a standard A4 aspect ratio (8.27 x 11.7 inches) */
+        max-height: 100vh; /* Limit height to the viewport height */
+       }
+
         }
 
 </style>
