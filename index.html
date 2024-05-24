@@ -11,21 +11,17 @@
 }
 */
 
-html {
+html, body {
   scroll-behavior: smooth;
-}
-
-body {
   margin: 0;
   padding: 0;
+  width: 100%;
   overflow-x: hidden; 
   font-size: 28px;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   flex-direction: column;
+  align-items: center;
 }
 
 .header {
@@ -42,7 +38,6 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  overflow: hidden;
   width: 100%; /* Ensures the navbar takes full width */
 }
 
@@ -118,28 +113,26 @@ body {
   padding-bottom: 350px;
 }
 
-
-.header, .content, .contentA,.content_resume {
+.header, .content, .contentA, .content_resume {
   width: 100%; /* Ensures full width for header and content */
   text-align: center; /* Centers text within these elements */
   scroll-margin-top: 70px; /* Height of the navbar */
 }
 
-
-.content,.content_resume {
+.content, .content_resume {
   padding-bottom: 350px;
 }
 
 .content_resume {
-    width: 100%; /* Ensures the resume section takes full width on smaller screens */
-    text-align: center; /* Center-align the resume image */
-  }
+  width: 100%; /* Ensures the resume section takes full width on smaller screens */
+  text-align: center; /* Center-align the resume image */
+}
 
-  .resume-image {
-    width: 90%; /* Adjust as needed to ensure the image fits well */
-    max-width: 800px; /* Optional: limit the maximum width */
-    height: auto; /* Maintain aspect ratio */
-  }
+.resume-image {
+  width: 90%; /* Adjust as needed to ensure the image fits well */
+  max-width: 800px; /* Optional: limit the maximum width */
+  height: auto; /* Maintain aspect ratio */
+}
 
 .sticky {
   position: fixed;
@@ -197,9 +190,6 @@ body {
 
 }
 
-
-
-
 </style>
 </head>
 <body>
@@ -237,8 +227,6 @@ body {
     <h2>Resume</h2>
     <img src="./Resume Spencer Yeh.jpg" alt="Resume of Spencer Yeh" class="resume-image" style="border:3px solid #000000">
   </div>
-
-
 
   <div class="content" id="Project">
     <h2>Projects</h2>
