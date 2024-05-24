@@ -4,6 +4,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <style>
 
+/* * {
+  border: 2px solid #04AA6D  ;
+} */
+
 html {
   scroll-behavior: smooth;
 }
@@ -28,6 +32,7 @@ body {
   background-color: #f1f1f1;
   padding: 30px;
   text-align: center;
+  width: 100vw;
 }
 
 .header, #navbar {
@@ -80,18 +85,24 @@ body {
   justify-content: center; /* Adjusts children horizontally */
   align-items: center; /* Aligns children vertically in the middle */
   width: 100%; /* Ensures container takes full width */
+  margin-top: 20vh;
+  margin-bottom: 20vh;
 }
 
 .content2 {
+  display: flex;
+  width: 20%;
   flex: 1; /* Takes up 1 part of the available space */
   min-width: 200px; /* Minimum width to ensure content is readable */
-  padding-bottom: 350px;
+  /* padding-bottom: 350px; */
+  justify-content: center;
 }
 
+
 .content3 {
-  flex: 3; /* Takes up 2 parts of the available space */
-  min-width: 200px; /* Minimum width to ensure content is readable */
-  padding-bottom: 350px;
+  padding-left: 10%;
+  width: 70%;
+  /* padding-bottom: 350px; */
 }
 
 .side-by-side-container2 {
@@ -99,6 +110,7 @@ body {
   justify-content: center; /* Adjusts children horizontally */
   align-items: center; /* Aligns children vertically in the middle */
   width: 100%; /* Ensures container takes full width */
+  
 }
 
 .content4 {
@@ -141,14 +153,16 @@ body {
         flex: 1;
         min-width: 300px;
         margin: 10px;
+        
         display: flex;
         flex-direction: column;
         align-items: center;
     }
 
     .project-item img {
-        width: 491px;
-        height: 300px;
+        /* width: 491px;
+        height: 300px; */
+        object-fit: cover;
         border: 3px solid #000000;
         margin-bottom: 40px; /* Space between image and button */
     }
@@ -162,6 +176,24 @@ body {
         font-size: 16px;
         cursor: pointer;
     }
+
+@media (max-width: 1024px) {
+
+ .content3{
+  width: 100%;
+  padding-left: 0;
+ }
+
+ .content2 {
+  width: 100%;
+ }
+
+
+  .side-by-side-container {
+    display: block;
+  }
+}
+
 
 </style>
 </head>
@@ -193,21 +225,21 @@ body {
     
       <div class="content3">
 
-        <pre style="font-family:Arial; font-size:1.15em">
+        <p style="font-family:Arial; font-size:1.15em">
           Hello! My name is Spencer Yeh and this is my personal website 
           that I created using HTML and CSS. I recently graduated 
           from Boston University with a B.A. in Math/Computer Science 
           and a B.S. in Business Administration. This website serves 
           to share my projects and experiences. 
           Feel free to explore below!  
-        </pre>
+        </p>
       </div>
     </div>
   
-  <div class="content" id="Resume">
+  <!-- <div class="content" id="Resume">
     <h2>Resume</h2>
     <object data="./Resume Spencer Yeh.pdf" type="application/pdf" width="800" height="1075"></object>
-  </div>
+  </div> -->
  
 
   <div class="content" id="Project">
