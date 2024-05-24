@@ -11,21 +11,17 @@
 }
 */
 
-html {
+html, body {
   scroll-behavior: smooth;
-}
-
-body {
   margin: 0;
   padding: 0;
+  width: 100%;
   overflow-x: hidden; 
   font-size: 28px;
   font-family: Arial, Helvetica, sans-serif;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
   flex-direction: column;
+  align-items: center;
 }
 
 .header {
@@ -42,7 +38,6 @@ body {
   position: sticky;
   top: 0;
   z-index: 10;
-  overflow: hidden;
   width: 100%; /* Ensures the navbar takes full width */
 }
 
@@ -79,9 +74,9 @@ body {
 
 .side-by-side-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  justify-content: center; /* Adjusts children horizontally */
+  align-items: center; /* Aligns children vertically in the middle */
+  width: 100%; /* Ensures container takes full width */
   margin-top: 20vh;
   margin-bottom: 20vh;
 }
@@ -89,8 +84,8 @@ body {
 .content2 {
   display: flex;
   width: 20%;
-  flex: 1;
-  min-width: 200px;
+  flex: 1; /* Takes up 1 part of the available space */
+  min-width: 200px; /* Minimum width to ensure content is readable */
   justify-content: center;
 }
 
@@ -101,31 +96,42 @@ body {
 
 .side-by-side-container2 {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
+  justify-content: center; /* Adjusts children horizontally */
+  align-items: center; /* Aligns children vertically in the middle */
+  width: 100%; /* Ensures container takes full width */
 }
 
 .content4 {
-  flex: 1;
-  min-width: 200px;
+  flex: 1; /* Takes up 1 part of the available space */
+  min-width: 200px; /* Minimum width to ensure content is readable */
   padding-bottom: 350px;
 }
 
 .content5 {
-  flex: 3;
-  min-width: 200px;
+  flex: 3; /* Takes up 2 parts of the available space */
+  min-width: 200px; /* Minimum width to ensure content is readable */
   padding-bottom: 350px;
 }
 
-.header, .content, .contentA {
-  width: 100%;
-  text-align: center;
-  scroll-margin-top: 70px;
+.header, .content, .contentA, .content_resume {
+  width: 100%; /* Ensures full width for header and content */
+  text-align: center; /* Centers text within these elements */
+  scroll-margin-top: 70px; /* Height of the navbar */
 }
 
-.content {
+.content, .content_resume {
   padding-bottom: 350px;
+}
+
+.content_resume {
+  width: 100%; /* Ensures the resume section takes full width on smaller screens */
+  text-align: center; /* Center-align the resume image */
+}
+
+.resume-image {
+  width: 90%; /* Adjust as needed to ensure the image fits well */
+  max-width: 800px; /* Optional: limit the maximum width */
+  height: auto; /* Maintain aspect ratio */
 }
 
 .sticky {
@@ -144,7 +150,7 @@ body {
 
 .project-item {
   flex: 1;
-  min-width: 40vh;
+  min-width: 40vh;  /* Change the length of the boxes */
   margin: 10px;
   display: flex;
   flex-direction: column;
@@ -154,7 +160,7 @@ body {
 .project-item img {
   object-fit: cover;
   border: 3px solid #000000;
-  margin-bottom: 40px;
+  margin-bottom: 40px; /* Space between image and button */
 }
 
 .project-item button {
@@ -181,7 +187,9 @@ body {
   .side-by-side-container {
     display: block; /* Stacks the content vertically on smaller screens */
   }
+
 }
+
 </style>
 </head>
 <body>
@@ -213,6 +221,11 @@ body {
         Hello! My name is Spencer Yeh and this is my personal website that I created using HTML and CSS. I recently graduated from Boston University with a B.A. in Math/Computer Science and a B.S. in Business Administration. This website serves to share my projects and experiences. Feel free to explore below!
       </p>
     </div>
+  </div>
+
+  <div class="content_resume" id="Resume">
+    <h2>Resume</h2>
+    <img src="./Resume Spencer Yeh.jpg" alt="Resume of Spencer Yeh" class="resume-image" style="border:3px solid #000000">
   </div>
 
   <div class="content" id="Project">
