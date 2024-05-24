@@ -118,15 +118,28 @@ body {
   padding-bottom: 350px;
 }
 
-.header, .content, .contentA {
+
+.header, .content, .contentA,.content_resume {
   width: 100%; /* Ensures full width for header and content */
   text-align: center; /* Centers text within these elements */
   scroll-margin-top: 70px; /* Height of the navbar */
 }
 
-.content {
+
+.content,.content_resume {
   padding-bottom: 350px;
 }
+
+.content_resume {
+    width: 100%; /* Ensures the resume section takes full width on smaller screens */
+    text-align: center; /* Center-align the resume image */
+  }
+
+  .resume-image {
+    width: 90%; /* Adjust as needed to ensure the image fits well */
+    max-width: 800px; /* Optional: limit the maximum width */
+    height: auto; /* Maintain aspect ratio */
+  }
 
 .sticky {
   position: fixed;
@@ -181,7 +194,15 @@ body {
   .side-by-side-container {
     display: block; /* Stacks the content vertically on smaller screens */
   }
+
+  .content_resume{
+    
+  }
 }
+
+
+
+
 </style>
 </head>
 <body>
@@ -214,6 +235,13 @@ body {
       </p>
     </div>
   </div>
+
+  <div class="content_resume" id="Resume">
+    <h2>Resume</h2>
+    <img src="./Resume Spencer Yeh.jpg" alt="Resume of Spencer Yeh" class="resume-image">
+  </div>
+
+
 
   <div class="content" id="Project">
     <h2>Projects</h2>
